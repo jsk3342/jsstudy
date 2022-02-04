@@ -12,17 +12,13 @@
       <p>Alert 박스</p>
       <button id="box">x</button>
     </div>
-    <button id="id-box">아이디</button>
-    <button id="pw-box">비번</button>
+    <button onclick="idshow('아아디 써라');">아이디</button>
+    <button onclick="idshow('비번 입럭하세요');">비번</button>
     <script>
-      document.getElementById("id-box").addEventListener("click", function () {
-        document.getElementById("alert-box1").innerHTML = "아이디 입력하세요";
+      function idshow(content) {
+        document.getElementById("alert-box1").innerHTML = content;
         document.getElementById("alert-box1").style.display = "block";
-      });
-      document.getElementById("pw-box").addEventListener("click", function () {
-        document.getElementById("alert-box1").innerHTML = "비번 입력하세요";
-        document.getElementById("alert-box1").style.display = "block";
-      });
+      }
     </script>
   </body>
 </html>
