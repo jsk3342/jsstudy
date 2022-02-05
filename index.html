@@ -14,7 +14,29 @@
     </div>
     <button id="id-box">아이디</button>
     <button id="pw-box">비번</button>
+    <p class="greeting">안녕하세요</p>
+    <p class="greeting">안녕하세요</p>
+    <p class="greeting">안녕하세요</p>
+    <button class="big">버튼1</button>
+    <button class="big2">버튼2</button>
+    <button class="big">버튼1</button>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script>
+      $("#id-box").html("이걸로바꿔");
+      $("#id-box").addClass("yellow-bg");
+      $(".greeting").html("안녕");
+      $(".big").on("click", function () {
+        $(".greeting").hide();
+      });
+      $(".big2").on("click", function () {
+        $(".greeting").show();
+      });
+
       document.getElementById("id-box").addEventListener("click", function () {
         document.getElementById("alert-box1").innerHTML = "아이디 입력하세요";
         document.getElementById("alert-box1").style.display = "block";
