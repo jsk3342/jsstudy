@@ -30,13 +30,16 @@
               placeholder="Email"
               id="email"
             />
+            <p class="email-noti">이메일을 입력해주세요</p>
           </div>
           <div class="form-group">
             <input
               type="password"
               class="form-control"
               placeholder="Password"
+              id="pw"
             />
+            <p class="pw-noti">비밀번호를 입력해주세요</p>
           </div>
           <button type="submit" class="btn btn-primary btntest">전송</button>
           <button type="submit" class="btn btn-primary">닫기</button>
@@ -105,6 +108,20 @@
       if ($("#test-input").val() == "안녕") {
         $(".black-background").fadeIn();
       }
+
+      $('form').on('submit', function(e){
+        if ($("#email").val() == "" && $("#pw").val() == "" ) {
+          e.preventDefault();
+          $(".email-noti").show();
+          $(".pw-noti").show();
+        } else if ($("#pw").val() == "") {
+          e.preventDefault();
+          $(".pw-noti").show();
+        } else if ($("#email").val() == "") {
+          e.preventDefault();
+          $(".email-noti").show();
+        }
+      })
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
