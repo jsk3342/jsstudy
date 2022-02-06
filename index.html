@@ -20,6 +20,7 @@
     <button class="big">버튼1</button>
     <button class="big2">버튼2</button>
     <button class="big">버튼1</button>
+    삼육구게임(1);
 
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -45,6 +46,16 @@
         document.getElementById("alert-box1").innerHTML = "비번 입력하세요";
         document.getElementById("alert-box1").style.display = "block";
       });
+
+      function 삼육구게임(a) {
+        if (a % 9 == 0) {
+          console.log("박수*2");
+        } else if (a % 3 == 0) {
+          console.log("박수");
+        } else {
+          console.log("통과");
+        }
+      }
     </script>
   </body>
 </html>
