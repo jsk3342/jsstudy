@@ -19,6 +19,10 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <div class="left-menu">
+      <p>Menu title</p>
+    </div>
+
     <div class="black-background">
       <div class="white-background">
         <p>로그인 하세요</p>
@@ -42,7 +46,9 @@
             <p class="pw-noti">비밀번호를 입력해주세요</p>
           </div>
           <button type="submit" class="btn btn-primary btntest">전송</button>
-          <button type="submit" class="btn btn-primary">닫기</button>
+          <button type="submit" class="btn btn-primary" id="close-menu">
+            닫기
+          </button>
         </form>
       </div>
     </div>
@@ -69,7 +75,12 @@
         It uses utility classes for typography and spacing to space content out
         within the larger container.
       </p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a>
+      <a id="login" class="btn btn-primary btn-lg" href="#" role="button"
+        >Log In</a
+      >
+      <a id="show-menu" class="btn btn-primary btn-lg" href="#" role="button"
+        >Show Menu</a
+      >
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -87,17 +98,24 @@
     ></script>
     <script>
 
+      $('#show-menu').click(function(){
+        $('.left-menu').animate({ marginLeft : '0px'});
+      });
+
+
+
+
       $(".btntest").on('submit', function(e) {
         if ( $("#email").val() = "")
         {e.preventDefault();}
       })
 
 
-      $(".btn-lg").on("click", function () {
-        $(".black-background").fadeIn();
+      $("#login").on("click", function () {
+        $(".black-background").animate({ marginTop : '0px'});
       });
 
-      $(".close-btn").click(function () {
+      $("#close-menu").click(function () {
         $(".black-background").fadeOut();
       });
 
