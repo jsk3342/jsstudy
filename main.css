@@ -29,7 +29,13 @@
   z-index: 5;
   width: 100%;
   height: 100%;
-  margin-top: -1000px;
+  display: block;
+  transition: all 1s;
+  transform: translateY(-1000px);
+}
+
+.trans {
+  transform: translateY(0px);
 }
 
 .white-background {
@@ -72,4 +78,18 @@
   display: flex;
   justify-content: center;
   margin-left: -150px;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: transform 1s;
+  transform: translateX(0vw);
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100vw;
 }

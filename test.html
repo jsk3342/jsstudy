@@ -34,7 +34,7 @@
               placeholder="Email"
               id="email"
             />
-            <p class="email-noti">이메일을 입력해주세요</p>
+            <p id="email-noti" class="email-noti">이메일을 입력해주세요</p>
           </div>
           <div class="form-group">
             <input
@@ -43,7 +43,7 @@
               placeholder="Password"
               id="pw"
             />
-            <p class="pw-noti">비밀번호를 입력해주세요</p>
+            <p id="pw-noti" class="pw-noti">비밀번호를 입력해주세요</p>
           </div>
           <button type="submit" class="btn btn-primary btntest">전송</button>
           <button type="submit" class="btn btn-primary" id="close-menu">
@@ -83,6 +83,35 @@
       >
     </div>
 
+    <h4 class="my-4 text-center">Showcase</h4>
+    <div style="overflow: hidden">
+      <div class="slide-container">
+        <div class="slide-box">
+          <img
+            src="https://static.wanted.co.kr/images/banners/1507/4cd98fb7.jpg"
+            alt=""
+          />
+        </div>
+        <div class="slide-box">
+          <img
+            src="https://static.wanted.co.kr/images/banners/1525/154add1b.jpg"
+            alt=""
+          />
+        </div>
+        <div class="slide-box">
+          <img
+            src="https://static.wanted.co.kr/images/banners/1509/4c63e54f.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="slide-left">left</button>
+    <button class="slide-right">right</button>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -98,48 +127,78 @@
     ></script>
     <script>
 
-      $('#show-menu').click(function(){
-        $('.left-menu').animate({ marginLeft : '0px'});
+        var 지금보이는사진 = 1;
+        $('.slide-next').click(function() {
+
+          $('.slide-container').css('transform', 'translateX(-' + 지금보이는사진 + '00vw)');
+          지금보이는사진 = 지금보이는사진 + 1;
+
       });
 
+        $('.slide-1').click(function(){
+          $('.slide-container').css('transform','translateX(0vw)');
+        })
+        $('.slide-2').click(function(){
+          $('.slide-container').css('transform','translateX(-100vw)');
+        })
+        $('.slide-3').click(function(){
+          $('.slide-container').css('transform','translateX(-200vw)');
+        })
+
+
+        $('#show-menu').click(function(){
+          $('.left-menu').animate({ marginLeft : '0px'});
+        });
 
 
 
-      $(".btntest").on('submit', function(e) {
-        if ( $("#email").val() = "")
-        {e.preventDefault();}
-      })
+
+        $(".btntest").on('submit', function(e) {
+          if ( $("#email").val() = "")
+          {e.preventDefault();}
+        })
 
 
-      $("#login").on("click", function () {
-        $(".black-background").animate({ marginTop : '0px'});
-      });
+        $("#login").on("click", function () {
+          $(".black-background").addClass('trans');
+        });
 
-      $("#close-menu").click(function () {
-        $(".black-background").fadeOut();
-      });
+        $("#close-menu").click(function () {
+          $(".black-background").fadeOut();
+        });
 
-      $(".nav-sub__btn").on("click", function () {
-        $(".nav-sub").slideToggle();
-      });
+        $(".nav-sub__btn").on("click", function () {
+          $(".nav-sub").slideToggle();
+        });
 
-      if ($("#test-input").val() == "안녕") {
-        $(".black-background").fadeIn();
-      }
-
-      $('form').on('submit', function(e){
-        if ($("#email").val() == "" && $("#pw").val() == "" ) {
-          e.preventDefault();
-          $(".email-noti").show();
-          $(".pw-noti").show();
-        } else if ($("#pw").val() == "") {
-          e.preventDefault();
-          $(".pw-noti").show();
-        } else if ($("#email").val() == "") {
-          e.preventDefault();
-          $(".email-noti").show();
+        if ($("#test-input").val() == "안녕") {
+          $(".black-background").fadeIn();
         }
-      })
+
+
+        $('form').on('submit', function(e){
+          var emailrule = $("#email").val();
+          if (/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i.test(emailrule) == false ) {
+            e.preventDefault();
+            $("#email-noti").show();
+          }
+          var pwrule = $("#pw").val();
+          var passwordRule = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
+          if (passwordRule.test(pwrule) == false) {
+            e.preventDefault();
+            $("#pw-noti").show();
+          }
+
+
+
+
+
+
+
+
+
+
+        })
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
