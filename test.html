@@ -112,6 +112,24 @@
     <button class="slide-left">left</button>
     <button class="slide-right">right</button>
 
+    <div class="container mt-5">
+      <ul class="list">
+        <li class="tab-button tab-button1">Products</li>
+        <li class="tab-button tab-button2 active">Information</li>
+        <li class="tab-button tab-button3">Shipping</li>
+      </ul>
+
+      <div class="tab-content tab-content1">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content tab-content2 show">
+        <p>상품정보입니다. Info</p>
+      </div>
+      <div class="tab-content tab-content3">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+    </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -125,7 +143,13 @@
       integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
       crossorigin="anonymous"
     ></script>
+    <script src="tab.js"></script>
     <script>
+
+
+
+
+
 
         var 지금보이는사진 = 1;
         $('.slide-next').click(function() {
