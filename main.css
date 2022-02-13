@@ -152,3 +152,7 @@ ul.list::after {
 .show {
   display: block;
 }
+
+.size-select {
+  display: none;
+}
