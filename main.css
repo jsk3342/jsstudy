@@ -152,3 +152,21 @@ ul.list::after {
 .show {
   display: block;
 }
+
+.grey {
+  background: lightgray;
+  height: 2000px;
+  margin-top: 500px;
+}
+
+.image {
+  float: right;
+  width: 400px;
+  position: sticky;
+  top: 500px;
+}
+
+.text {
+  float: left;
+  width: 300px;
+}

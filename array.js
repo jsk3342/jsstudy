@@ -77,3 +77,23 @@ $(".btn-danger1")
     $(".price").eq(1).html(newproducts[1].price);
     $(".price").eq(2).html(newproducts[2].price);
   });
+
+$(".btn12").click(function () {
+  $.ajax({
+    url: "https://codingapple1.github.io/hello.txt",
+    type: "GET",
+  }).done(function (데이터) {
+    $("#hello").html(데이터);
+  });
+});
+
+$(".btn13").click(function () {
+  $.ajax({
+    url: "https://codingapple1.github.io/data.json",
+    type: "GET",
+  }).done(function (데이터) {
+    $(".sbtitle").html(데이터.model);
+    $(".sbpri").html(데이터.price);
+    $(".card-img-top").attr("src", 데이터.img);
+  });
+});
